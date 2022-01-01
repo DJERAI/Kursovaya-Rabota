@@ -26,7 +26,8 @@ namespace Kursovaya_Rabota
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Driver Form2 = new Driver();
+            Form2.ShowDialog();
         }
     }
 }
