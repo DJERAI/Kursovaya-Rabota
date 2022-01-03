@@ -36,7 +36,6 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.Автомобили = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Добавить Автомобиль";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -108,21 +108,12 @@
             this.textBox5.Size = new System.Drawing.Size(145, 20);
             this.textBox5.TabIndex = 7;
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(12, 138);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(160, 23);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Список всех автомобилей";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // Автомобили
             // 
             this.Автомобили.FormattingEnabled = true;
-            this.Автомобили.Location = new System.Drawing.Point(12, 167);
+            this.Автомобили.Location = new System.Drawing.Point(12, 141);
             this.Автомобили.Name = "Автомобили";
-            this.Автомобили.Size = new System.Drawing.Size(285, 277);
+            this.Автомобили.Size = new System.Drawing.Size(285, 303);
             this.Автомобили.TabIndex = 9;
             // 
             // label1
@@ -181,7 +172,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Автомобили);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
@@ -192,6 +182,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Cars";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Cars_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,7 +198,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ListBox Автомобили;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
