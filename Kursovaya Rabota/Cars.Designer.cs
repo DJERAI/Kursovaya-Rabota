@@ -62,6 +62,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Удалить Автомобиль";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -113,7 +114,7 @@
             this.Автомобили.FormattingEnabled = true;
             this.Автомобили.Location = new System.Drawing.Point(12, 141);
             this.Автомобили.Name = "Автомобили";
-            this.Автомобили.Size = new System.Drawing.Size(285, 303);
+            this.Автомобили.Size = new System.Drawing.Size(776, 303);
             this.Автомобили.TabIndex = 9;
             // 
             // label1
