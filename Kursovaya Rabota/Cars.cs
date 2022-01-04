@@ -182,5 +182,59 @@ namespace Kursovaya_Rabota
                 MessageBox.Show("Произошла ошибка.", "Ошибка");
             }
         }
+        public void SelectCar(ListBox lb)
+        {
+            lb.Items.Clear();
+            string selected_id = textBox5.Text;
+            string selected_id1 = textBox5.Text;
+            string selected_id2 = textBox5.Text;
+            // устанавливаем соединение с БД
+            conn.Open();
+            // запрос
+            string sql = $"SELECT  titleMarks FROM t_Marka WHERE idMarka={selected_id}";
+            string sql1 = $"SELECT titleModel FROM t_Model WHERE idModel={selected_id1}";
+            string sql2 = $"SELECT NumberTS FROM t_Cars WHERE idCar={selected_id2}";
+            // объект для выполнения SQL-запроса
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            MySqlCommand command1 = new MySqlCommand(sql1, conn);
+            MySqlCommand command2 = new MySqlCommand(sql2, conn);
+            // объект для чтения ответа сервера
+            MySqlDataReader reader = command.ExecuteReader();
+            MySqlDataReader reader1 = command1.ExecuteReader();
+            MySqlDataReader reader2 = command2.ExecuteReader();
+            // читаем результат
+            while (reader.Read())
+            {
+                // элементы массива [] - это значения столбцов из запроса SELECT
+                lb.Items.Add("Марка Автомобиля - " + reader[0].ToString());
+                lb.Items.Add("Модель Автомобиля - " + reader1[1].ToString());
+                lb.Items.Add($"Номер Автомобиля - " + reader2[2].ToString());
+            }
+            reader.Close(); // закрываем reader
+            // закрываем соединение с БД
+            conn.Close();
+        }
+        //КНОПКА ПОИСКА ПО ID 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string selected_id = textBox5.Text;
+            string selected_id1 = textBox5.Text;
+            string selected_id2 = textBox5.Text;
+            //Если метод вставки записи в БД вернёт истину, то просто обновим список и увидим вставленное значение
+            if (InsertCars(selected_id, selected_id1, selected_id2))
+            {
+                SelectCar(Автомобили);
+            }
+            //Иначе произошла какая то ошибка и покажем пользователю уведомление
+            else
+            {
+                MessageBox.Show("Произошла ошибка.", "Ошибка");
+            }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

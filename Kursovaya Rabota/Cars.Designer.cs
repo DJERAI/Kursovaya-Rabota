@@ -42,6 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // button1
@@ -66,12 +67,13 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 100);
+            this.button3.Location = new System.Drawing.Point(452, 106);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(134, 23);
             this.button3.TabIndex = 2;
             this.button3.Text = "Найти автомобиль";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBox1
             // 
@@ -104,7 +106,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(152, 102);
+            this.textBox5.Location = new System.Drawing.Point(602, 109);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(145, 20);
             this.textBox5.TabIndex = 7;
@@ -114,7 +116,7 @@
             this.Автомобили.FormattingEnabled = true;
             this.Автомобили.Location = new System.Drawing.Point(12, 141);
             this.Автомобили.Name = "Автомобили";
-            this.Автомобили.Size = new System.Drawing.Size(776, 303);
+            this.Автомобили.Size = new System.Drawing.Size(399, 303);
             this.Автомобили.TabIndex = 9;
             // 
             // label1
@@ -156,17 +158,27 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(149, 86);
+            this.label5.Location = new System.Drawing.Point(599, 93);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(136, 13);
             this.label5.TabIndex = 14;
             this.label5.Text = "Введите ID автомобиля...";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(424, 141);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(364, 303);
+            this.listBox1.TabIndex = 15;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Cars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -205,5 +217,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
